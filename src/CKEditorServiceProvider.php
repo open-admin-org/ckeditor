@@ -2,9 +2,9 @@
 
 namespace OpenAdmin\Admin\CKEditor;
 
+use Illuminate\Support\ServiceProvider;
 use OpenAdmin\Admin\Admin;
 use OpenAdmin\Admin\Form;
-use Illuminate\Support\ServiceProvider;
 
 class CKEditorServiceProvider extends ServiceProvider
 {
@@ -13,8 +13,8 @@ class CKEditorServiceProvider extends ServiceProvider
      */
     public function boot(CKEditor $extension)
     {
-        if (! CKEditor::boot()) {
-            return ;
+        if (!CKEditor::boot()) {
+            return;
         }
 
         if ($views = $extension->views()) {

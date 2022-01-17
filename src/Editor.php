@@ -51,6 +51,7 @@ window.{$this->id}_selectFile = {$this->id}_selectFile; // make it globaly avail
 
 CKEDITOR.replace('{$this->id}', $config);
 EOT;
+
         return parent::render();
     }
 }
