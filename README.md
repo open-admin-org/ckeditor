@@ -5,7 +5,7 @@ This is a `open-admin` extension that integrates `CKEDITOR` into the `open-admin
 
 ## Screenshot
 
-![qq20180923-191508](https://user-images.githubusercontent.com/1479100/45928434-10944a00-bf76-11e8-918f-9566c7ba4c6b.png)
+![field-ckeditor](https://user-images.githubusercontent.com/86517067/149800371-a99f23ba-c979-4122-bb7d-2cc32ecd0982.png)
 
 ## Installation
 
@@ -41,8 +41,9 @@ In the `extensions` section of the `config/admin.php` file, add some configurati
 The configuration of the editor can be found in [CKEditor Documentation](https://ckeditor.com/docs/ckeditor4/latest/guide/), such as configuration language and height.
 ```php
     'config' => [
-        'lang'   => 'zh-CN',
-        'height' => 500,
+        'language'      => 'de',
+        'height'        => 500,
+        'contentsCss'   => '/css/frontend-body-content.css',
     ]
 ```
 
@@ -53,16 +54,8 @@ Use it in the form:
 $form->ckeditor('content');
 
 // Set config
-$form->ckeditor('content')->options(['lang' => 'fr', 'height' => 500]);
+$form->ckeditor('content')->options(['lang' => 'fr', 'height' => 500,'contentsCss' => '/css/frontend-body-content.css']);
 ```
-
-## Donate
-
-> Help keeping the project development going, by donating a little. Thanks in advance.
-
-[![PayPal Me](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/zousong)
-
-![-1](https://cloud.githubusercontent.com/assets/1479100/23287423/45c68202-fa78-11e6-8125-3e365101a313.jpg)
 
 License
 ------------
