@@ -14,8 +14,8 @@ class Editor extends Textarea
 
     public function setupImageBrowse()
     {
-        $this->options['filebrowserBrowseUrl'] = '/admin/media/?select=true&fn=window.opener.'.$this->id.'_selectFile';
-        $this->options['filebrowserImageBrowseUrl'] = '/admin/media?select=true&fn=window.opener.'.$this->id.'_selectFile';
+        $this->options['filebrowserBrowseUrl'] = '/admin/media/?select=true&close=true&fn=window.opener.'.$this->id.'_selectFile';
+        $this->options['filebrowserImageBrowseUrl'] = '/admin/media?select=true&close=true&fn=window.opener.'.$this->id.'_selectFile';
     }
 
     public function render()
@@ -25,7 +25,7 @@ class Editor extends Textarea
 
         $config = json_encode(array_merge($config, $this->options));
 
-        $this->script = <<<EOT
+        $this->script = <<<JS
 function {$this->id}_selectFile(url,file_name)
 {
     var dialog = CKEDITOR.dialog.getCurrent();
@@ -48,9 +48,14 @@ function {$this->id}_selectFile(url,file_name)
     }
 }
 window.{$this->id}_selectFile = {$this->id}_selectFile; // make it globaly available
-
-CKEDITOR.replace('{$this->id}', $config);
-EOT;
+var editor = CKEDITOR.replace('{$this->id}', $config);
+function CKupdate() {
+    for (instance in CKEDITOR.instances){
+        CKEDITOR.instances[instance].updateElement();
+    }
+}
+admin.form.addSaveCallback(CKupdate);
+JS;
 
         return parent::render();
     }
