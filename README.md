@@ -57,6 +57,14 @@ $form->ckeditor('content');
 $form->ckeditor('content')->options(['lang' => 'fr', 'height' => 500,'contentsCss' => '/css/frontend-body-content.css']);
 ```
 
+Problems?
+------------
+If ckeditor is not showing up and tells you that it's not found run the lines below to clear the compiled services and packages.
+
+```bash
+php artisan optimize:clear
+```
+
 License
 ------------
 Licensed under [The MIT License (MIT)](LICENSE).
