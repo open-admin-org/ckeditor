@@ -29,7 +29,7 @@ class CKEditorServiceProvider extends ServiceProvider
         }
 
         Admin::booting(function () {
-            Admin::js('vendor/open-admin-ext/ckeditor/ckeditor.js',false); // prevent minifying (last arg)
+            Admin::js('vendor/open-admin-ext/ckeditor/ckeditor.js', false); // prevent minifying (last arg)
             Form::extend('ckeditor', Editor::class);
         });
     }
