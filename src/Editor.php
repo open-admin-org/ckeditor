@@ -8,10 +8,6 @@ class Editor extends Textarea
 {
     protected $view = 'open-admin-ckeditor::editor';
 
-    protected static $js = [
-        'vendor/open-admin-ext/ckeditor/ckeditor.js',
-    ];
-
     public function setupImageBrowse()
     {
         $this->options['filebrowserBrowseUrl'] = '/admin/media/?select=true&close=true&fn=window.opener.'.$this->id.'_selectFile';
