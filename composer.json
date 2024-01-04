@@ -2,7 +2,13 @@
     "name": "open-admin-ext/ckeditor",
     "description": "Integrate CKEDITOR into open-admin",
     "type": "library",
-    "keywords": ["open-admin", "wysiwyg", "extension", "editor", "CKEditor"],
+    "keywords": [
+        "open-admin",
+        "wysiwyg",
+        "extension",
+        "editor",
+        "CKEditor"
+    ],
     "homepage": "https://github.com/open-admin-ext/ckeditor",
     "license": "MIT",
     "authors": [
@@ -15,7 +21,7 @@
         "php": ">=7.0.0",
         "laravel/framework": ">=7.0",
         "open-admin-org/open-admin": "~1.0",
-        "ckeditor/ckeditor": "4.*"
+        "ckeditor/ckeditor": "4.21"
     },
     "require-dev": {
         "phpunit/phpunit": "~6.0",
